@@ -39,8 +39,17 @@ repeated approval requests.
 - Retry a transient infrastructure failure only after checking its cause and the
   remaining budget. Stop automatic retries when the same cause persists; preserve
   the failure and report what requires intervention.
-- Resume from a checkpoint only when the intended state and configuration support
-  that continuation. Label a resumed run distinctly from an independent replicate.
+- Prefer recoverable training with complete checkpoints at coherent update or
+  episode boundaries and an interval proportionate to save cost and lost work.
+  Preserve the last usable checkpoint if a write is interrupted.
+- Resume only when the saved state and configuration support the claimed continuation.
+  Restore training progress and applicable optimizer, scheduler, RNG, normalization,
+  data, recurrent, and environment state; weights alone are a warm start. Read
+  [safe resume](../../references/safe-resume.md) when designing, repairing, or
+  establishing a resume path. Reuse an established path for ordinary continuation.
+- Treat continuation as the same run and seed with distinct attempt metadata, not
+  an independent replicate. Disclose unsupported state or changed conditions rather
+  than promising equivalence to uninterrupted training.
 
 ## Output ownership
 

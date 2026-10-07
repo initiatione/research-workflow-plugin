@@ -27,6 +27,9 @@ Reuse the project's experiment definitions and record decisions in its existing 
 - Extend a budget when development evidence supports likely additional learning.
   Judge plateaus over a meaningful window; do not declare convergence from a short
   noisy segment. Record the reason for substantial budget changes.
+- Account for recoverability when budgeting long runs. Keep schedules tied to
+  cumulative progress; extending a horizon-dependent schedule can change the
+  experiment and is not automatically equivalent to uninterrupted training.
 - Compare actual environment transitions, samples, or tokens as appropriate, plus
   relevant compute cost. Equal iteration counts can hide different rollout lengths,
   parallel environment counts, or batch sizes.
