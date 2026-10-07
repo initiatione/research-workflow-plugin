@@ -1,0 +1,12 @@
+{
+  "name": "initiatione-research",
+  "interface": { "displayName": "Initiatione Research" },
+  "plugins": [
+    {
+      "name": "research-workflow",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
