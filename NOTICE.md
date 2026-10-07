@@ -11,6 +11,10 @@ References consulted on 2026-10-07:
   proportional instructions, and completing authorized work.
 - OpenAI, [Package your plugin](https://developers.openai.com/plugins/build/plugins):
   portable manifest, Codex compatibility overlay, and marketplace layout.
+- Anthropic, [Publish plugins](https://code.claude.com/docs/en/plugins/publish),
+  [manifest reference](https://code.claude.com/docs/en/plugins/manifest-reference),
+  and [marketplace reference](https://code.claude.com/docs/en/plugins/marketplace-reference):
+  Claude Code discovery and a marketplace pointing to the same root plugin.
 - [sidiangongyuan/codex-skills-library](https://github.com/sidiangongyuan/codex-skills-library),
   especially `experiment-planner`, `paper-review-panel`, and `paper-visual-craft`:
   pilot-first research, comparison contracts, impact-based checks, and evidence
@@ -22,4 +26,5 @@ The exploratory single-seed policy, later multi-seed confirmation, economical
 training budgets, asynchronous job management, and limited defensive checks
 are explicit design choices of this package. They are not claims that OpenAI
 prescribes those research policies. This project is independent and is not
-endorsed by OpenAI or the referenced skill library.
+endorsed by OpenAI, Anthropic, or the referenced skill library. Its workflows are
+model-neutral; the Astra article informs instruction design, not model selection.

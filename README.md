@@ -1,7 +1,8 @@
 # Research Workflow
 
-一个统一管理四个独立 skill 的轻量插件，适用于机器学习与仿真科研实验。
-每个 skill 按任务需要触发，不要求每次实验走完全部流程。
+一个面向 Claude Code、Codex 及兼容 Agent Skills 客户端的轻量科研插件。
+四个独立 skill 使用同一份内容，不依赖特定模型；每个 skill 按任务需要触发，
+不要求每次实验走完全部流程。
 
 | Skill | 负责的决策 |
 | --- | --- |
@@ -11,6 +12,19 @@
 | [research-code-simplicity](skills/research-code-simplicity/SKILL.md) | 科研代码中的必要边界检查、重复 SHA、验证与维护成本。 |
 
 ## 使用
+
+### Claude Code
+
+```bash
+claude plugin marketplace add initiatione/research-workflow-plugin
+claude plugin install research-workflow@initiatione-research
+```
+
+安装后可按命名空间调用，例如 `/research-workflow:experiment-planning`。
+更新时运行 `claude plugin marketplace update initiatione-research`，再运行
+`claude plugin update research-workflow@initiatione-research`，重启会话后使用。
+
+### Codex
 
 将仓库加入 Codex marketplace：
 
@@ -26,6 +40,16 @@ codex plugin add research-workflow@initiatione-research
 更新源后可运行 `codex plugin marketplace upgrade initiatione-research`，
 再按客户端提示刷新或重新启动。以 `codex plugin marketplace list` 显示的
 实际 marketplace 名称为准。
+
+### 其他客户端
+
+`plugin.json` 使用可移植 Agent Plugins 格式。支持该格式的客户端可按其
+安装流程加载整个插件；仅支持 Agent Skills 的客户端需要按自身规则注册
+`skills/` 下的技能，并保留根目录 `references/` 与技能之间的相对路径。
+不要仅复制单个 `SKILL.md`，否则按需读取的参考文档会丢失。
+
+模型本身不负责安装插件；能否安装取决于承载模型的客户端。
+目前提供 Claude Code 与 Codex 原生入口，其他客户端尚未逐一验证。
 
 示例请求：
 
@@ -51,9 +75,10 @@ codex plugin add research-workflow@initiatione-research
   与不中断执行的一致性；仅加载权重不算完整续训，仿真限制如实说明。
 - 描述短而准确，参考文档按需读取，不把历史个案扩成所有任务的强制流程。
 
-`plugin.json` 是可移植插件入口，`.codex-plugin/plugin.json` 提供 Codex
-兼容清单；修改插件名称或版本时两者保持一致。技能文本在 `skills/` 中维护，
-无需分别安装四份副本。仓库附带 marketplace 目录以统一发现和管理插件。
+`plugin.json` 是可移植插件入口；`.claude-plugin/plugin.json` 与
+`.codex-plugin/plugin.json` 分别提供 Claude Code 和 Codex 入口。
+修改插件名称或版本时三者保持一致。技能文本在 `skills/` 中维护，
+两种客户端读取同一份内容。仓库分别附带对应 marketplace 清单以统一管理插件。
 
 ## 来源与验证
 
@@ -62,8 +87,16 @@ codex plugin add research-workflow@initiatione-research
 以及 [codex-skills-library](https://github.com/sidiangongyuan/codex-skills-library)。
 具体取舍见 [NOTICE.md](NOTICE.md)。
 
-格式验证可使用 Codex 自带 skill-creator 的 `quick_validate.py` 对四个 skill
-分别检查。发布前另做独立场景评审；格式通过不代表行为正确，也不代表已完成
-某个客户端中的安装测试。插件本身不附加新的实验审计或校验框架。
+Claude Code 可分别验证两份清单：
+
+```bash
+claude plugin validate .claude-plugin/plugin.json --strict
+claude plugin validate .claude-plugin/marketplace.json --strict
+```
+
+Codex 可用自带 skill-creator 的 `quick_validate.py` 检查技能格式。
+清单和技能格式已验证，Codex marketplace 入口已通过 CLI 识别；尚未进行
+两个客户端的完整安装与新会话调用测试。此前已完成独立场景评审；格式通过
+不代表行为正确。插件本身不附加新的实验审计或校验框架。
 
 MIT License.

@@ -1,16 +1,8 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "research-workflow",
   "version": "0.1.2",
   "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, and simple research code.",
-  "author": {
-    "name": "initiatione"
-  },
+  "author": { "name": "initiatione" },
   "repository": "https://github.com/initiatione/research-workflow-plugin",
-  "license": "MIT",
-  "keywords": [
-    "research",
-    "experiments",
-    "evaluation"
-  ]
+  "license": "MIT"
 }

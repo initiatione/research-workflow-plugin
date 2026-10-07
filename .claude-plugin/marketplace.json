@@ -1,0 +1,8 @@
+{
+  "name": "initiatione-research",
+  "owner": { "name": "initiatione" },
+  "metadata": { "description": "Portable research workflow skills." },
+  "plugins": [
+    { "name": "research-workflow", "source": "./" }
+  ]
+}
