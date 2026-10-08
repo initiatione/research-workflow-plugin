@@ -1,7 +1,7 @@
 # Research Workflow
 
 一个面向 Claude Code、Codex 及兼容 Agent Skills 客户端的轻量科研插件。
-四个独立 skill 使用同一份内容，不依赖特定模型；每个 skill 按任务需要触发，
+五个独立 skill 使用同一份内容，不依赖特定模型；每个 skill 按任务需要触发，
 不要求每次实验走完全部流程。
 
 | Skill | 负责的决策 |
@@ -10,6 +10,7 @@
 | [run-management](skills/run-management/SKILL.md) | 异步启动、资源允许时并行、进程恢复及产物归属。 |
 | [fair-evaluation](skills/fair-evaluation/SKILL.md) | 比较条件、指标含义、统计单位及结论是否成立。 |
 | [research-code-simplicity](skills/research-code-simplicity/SKILL.md) | 科研代码中的必要边界检查、重复 SHA、验证与维护成本。 |
+| [humanizer](skills/humanizer/SKILL.md) | 改写 AI 味文字：识别规则化修辞（空气对比、套路收尾、硬凑三联、滥用破折号与冒号展开、充气词），保留事实与作者声口。 |
 
 ## 使用
 
@@ -57,6 +58,7 @@ codex plugin add research-workflow@initiatione-research
 - “用 run-management 启动已确定的实验，空闲资源允许时并行运行。”
 - “用 fair-evaluation 检查这张表能否直接比较，并指出需要重评的单元。”
 - “用 research-code-simplicity 精简这段科研代码中重复的校验。”
+- “用 humanizer 检查这段引言的 AI 表述并改写。”
 
 插件没有 MCP、hooks、运行时依赖或自动启动训练的脚本。
 它复用目标项目已有的环境、启动器、结果路径和质量工具。

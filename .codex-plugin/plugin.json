@@ -1,7 +1,7 @@
 {
   "name": "research-workflow",
-  "version": "0.1.2",
-  "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, and simple research code.",
+  "version": "0.2.0",
+  "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, simple research code, and natural-sounding prose.",
   "skills": "./skills/",
   "interface": {
     "displayName": "Research Workflow",

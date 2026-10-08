@@ -22,6 +22,17 @@ References consulted on 2026-10-07:
   selected workflow ideas rather than vendoring their skill text or installer.
   Inspected revision: `41f5a211b1a8d210023f51f9d56088311a3dae79`.
 
+Vendored on 2026-10-08:
+
+- [blader/humanizer](https://github.com/blader/humanizer) by Siqi Chen, MIT:
+  `skills/humanizer/` vendors a modified copy of that skill, which distils
+  Wikipedia's ["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
+  (WikiProject AI Cleanup) and reviews of AI-generated text. This package adds
+  pattern §9 (colon-led elaboration on repeat) observed during manuscript
+  editing, and renumbers the following patterns accordingly; the upstream MIT
+  licence text is preserved at `skills/humanizer/LICENSE`.
+  Base version: v3.1.0; this copy is v3.2.0.
+
 The exploratory single-seed policy, later multi-seed confirmation, economical
 training budgets, asynchronous job management, and limited defensive checks
 are explicit design choices of this package. They are not claims that OpenAI
