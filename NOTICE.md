@@ -30,8 +30,20 @@ Vendored on 2026-10-08:
   (WikiProject AI Cleanup) and reviews of AI-generated text. This package adds
   pattern §9 (colon-led elaboration on repeat) observed during manuscript
   editing, and renumbers the following patterns accordingly; the upstream MIT
-  licence text is preserved at `skills/humanizer/LICENSE`.
-  Base version: v3.1.0; this copy is v3.2.0.
+  licence text is preserved at `skills/humanizer/LICENSE`. The catalog text now
+  lives at `skills/humanizer/references/general-track.md`, unchanged at v3.2.0;
+  base version v3.1.0.
+
+Vendored on 2026-10-31:
+
+- [AIScientists-Dev/academic-humanizer](https://github.com/AIScientists-Dev/academic-humanizer)
+  v0.3.3, MIT: `skills/humanizer/references/academic-track.md` vendors its skill
+  text verbatim with the frontmatter removed. It contributes the academic track:
+  academic AI tells, the scholarly constructs to preserve, claim-to-evidence
+  discipline, voice and venue matching, and NSF/NIH proposal mode. The upstream
+  MIT licence text is preserved at `skills/humanizer/LICENSE-academic-humanizer`.
+  `skills/humanizer/SKILL.md` is rewritten around this package's own track
+  routing and precedence rules; it is not a copy of either upstream.
 
 The exploratory single-seed policy, later multi-seed confirmation, economical
 training budgets, asynchronous job management, and limited defensive checks

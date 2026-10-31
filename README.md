@@ -10,7 +10,7 @@
 | [run-management](skills/run-management/SKILL.md) | 异步启动、资源允许时并行、进程恢复及产物归属。 |
 | [fair-evaluation](skills/fair-evaluation/SKILL.md) | 比较条件、指标含义、统计单位及结论是否成立。 |
 | [research-code-simplicity](skills/research-code-simplicity/SKILL.md) | 科研代码中的必要边界检查、重复 SHA、验证与维护成本。 |
-| [humanizer](skills/humanizer/SKILL.md) | 改写 AI 味文字：识别规则化修辞（空气对比、套路收尾、硬凑三联、滥用破折号与冒号展开、充气词），保留事实与作者声口。 |
+| [humanizer](skills/humanizer/SKILL.md) | 改写 AI 味文字：先按文档类型分为 academic（论文、基金申请；保结构、论断对证据）与 general（博客、文档、邮件）两轨，再识别规则化修辞（空气对比、套路收尾、硬凑三联、滥用破折号与冒号展开、充气词），保留事实与作者声口。 |
 
 ## 使用
 
@@ -47,7 +47,8 @@ codex plugin add research-workflow@initiatione-research
 `plugin.json` 使用可移植 Agent Plugins 格式。支持该格式的客户端可按其
 安装流程加载整个插件；仅支持 Agent Skills 的客户端需要按自身规则注册
 `skills/` 下的技能，并保留根目录 `references/` 与技能之间的相对路径。
-不要仅复制单个 `SKILL.md`，否则按需读取的参考文档会丢失。
+不要仅复制单个 `SKILL.md`，否则按需读取的参考文档会丢失。humanizer 的两轨
+规则位于其自带的 `skills/humanizer/references/`，安装该技能时须整目录带走。
 
 模型本身不负责安装插件；能否安装取决于承载模型的客户端。
 目前提供 Claude Code 与 Codex 原生入口，其他客户端尚未逐一验证。
@@ -58,7 +59,7 @@ codex plugin add research-workflow@initiatione-research
 - “用 run-management 启动已确定的实验，空闲资源允许时并行运行。”
 - “用 fair-evaluation 检查这张表能否直接比较，并指出需要重评的单元。”
 - “用 research-code-simplicity 精简这段科研代码中重复的校验。”
-- “用 humanizer 检查这段引言的 AI 表述并改写。”
+- “用 humanizer 检查这段引言的 AI 表述并改写；论文正文默认走 academic 轨，保持段落结构不动。”
 
 插件没有 MCP、hooks、运行时依赖或自动启动训练的脚本。
 它复用目标项目已有的环境、启动器、结果路径和质量工具。
