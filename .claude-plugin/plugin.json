@@ -1,7 +1,7 @@
 {
   "name": "research-workflow",
-  "version": "0.3.0",
-  "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, simple research code, and natural-sounding prose.",
+  "version": "0.4.0",
+  "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, simple research code, natural-sounding prose, and non-defensive academic writing.",
   "author": { "name": "initiatione" },
   "repository": "https://github.com/initiatione/research-workflow-plugin",
   "license": "MIT"

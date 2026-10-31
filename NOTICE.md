@@ -45,6 +45,16 @@ Vendored on 2026-10-31:
   `skills/humanizer/SKILL.md` is rewritten around this package's own track
   routing and precedence rules; it is not a copy of either upstream.
 
+- [Kiterlin/anti-defensive-writing](https://github.com/Kiterlin/anti-defensive-writing),
+  MIT: `skills/anti-defensive-writing/` vendors `SKILL.md` verbatim
+  (md5 `56272d05b90cd7ba11627cd3ba2ff699`, English and Chinese rule sets in one
+  file) together with its three worked examples. The upstream MIT licence text is
+  preserved at `skills/anti-defensive-writing/LICENSE`. Its assets, installer,
+  tests and CI are not carried over. Note the interaction with `humanizer`:
+  this skill strengthens claims by removing defensive framing, whereas the
+  academic track of `humanizer` pulls verb strength back to the evidence, so the
+  two are not meant to run over the same passage in sequence.
+
 The exploratory single-seed policy, later multi-seed confirmation, economical
 training budgets, asynchronous job management, and limited defensive checks
 are explicit design choices of this package. They are not claims that OpenAI

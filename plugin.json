@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "research-workflow",
-  "version": "0.3.0",
-  "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, simple research code, and natural-sounding prose.",
+  "version": "0.4.0",
+  "description": "Focused skills for economical experiments, asynchronous runs, fair evaluation, simple research code, natural-sounding prose, and non-defensive academic writing.",
   "author": {
     "name": "initiatione"
   },

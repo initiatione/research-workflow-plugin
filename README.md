@@ -1,7 +1,7 @@
 # Research Workflow
 
 一个面向 Claude Code、Codex 及兼容 Agent Skills 客户端的轻量科研插件。
-五个独立 skill 使用同一份内容，不依赖特定模型；每个 skill 按任务需要触发，
+六个独立 skill 使用同一份内容，不依赖特定模型；每个 skill 按任务需要触发，
 不要求每次实验走完全部流程。
 
 | Skill | 负责的决策 |
@@ -11,6 +11,7 @@
 | [fair-evaluation](skills/fair-evaluation/SKILL.md) | 比较条件、指标含义、统计单位及结论是否成立。 |
 | [research-code-simplicity](skills/research-code-simplicity/SKILL.md) | 科研代码中的必要边界检查、重复 SHA、验证与维护成本。 |
 | [humanizer](skills/humanizer/SKILL.md) | 改写 AI 味文字：先按文档类型分为 academic（论文、基金申请；保结构、论断对证据）与 general（博客、文档、邮件）两轨，再识别规则化修辞（空气对比、套路收尾、硬凑三联、滥用破折号与冒号展开、充气词），保留事实与作者声口。 |
+| [anti-defensive-writing](skills/anti-defensive-writing/SKILL.md) | 去掉过度防御的写法：多余免责、重复声明「不主张什么」、段落开头的限制、自我削弱式贡献陈述；保留方法、范围与安全上必要的限制，并把必要限制集中到一处。方向与 humanizer 相反，不要对同一段连跑。 |
 
 ## 使用
 
@@ -60,6 +61,7 @@ codex plugin add research-workflow@initiatione-research
 - “用 fair-evaluation 检查这张表能否直接比较，并指出需要重评的单元。”
 - “用 research-code-simplicity 精简这段科研代码中重复的校验。”
 - “用 humanizer 检查这段引言的 AI 表述并改写；论文正文默认走 academic 轨，保持段落结构不动。”
+- “用 anti-defensive-writing 检查第 5 章有没有过度防御的表述，并指出哪些限制必须保留。”
 
 插件没有 MCP、hooks、运行时依赖或自动启动训练的脚本。
 它复用目标项目已有的环境、启动器、结果路径和质量工具。
